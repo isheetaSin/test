@@ -12,30 +12,31 @@ return None if invalid input. Otherwise return the result
 '''
 
 def calculate(s):
-    '''
-    >>> calculate("1+3")
-    4
-    >>> calculate("1+3*4/3")
-    5.0
-    >>> calculate("(1+3)*5")
-    20
-    >>> calculate("-----1")
-    -1
-    >>> calculate("-+-1")
-    1
-    >>> calculate(\'print("bad guy coming to hack")\')
-    '''
+   
     # TODO = fill in this function
+
+
+    '''    
+	cases: 
+		multiplication and division adjacent to each other
+		any other charcater than 10 digits and 4 operations
+    '''
 
     check = 0
     
     #check for non digit and non operation and non brackets character
+    '''
     for i in range(len(s)):
         if s[i]!='0' and s[i]!='1' and s[i]!='2' and s[i]!='3' and s[i]!='4'and s[i]!='5'and s[i]!='6'and s[i]!='7'and s[i]!='8'and s[i]!='9'and s[i]!='+'and s[i]!='-'and s[i]!='/'and s[i]!='*' and s[i]!='(' and s[i]!=')':
             #print("None")
             check = 1
             break
-  
+    '''
+
+    for i in range(len(s)):
+        if s[i].isdigit() == 0 and s[i]!='+'and s[i]!='-'and s[i]!='/'and s[i]!='*' and s[i]!='(' and s[i]!=')':
+            check = 1
+            break   
 
     #check for adjacent multiplication and division
 
@@ -61,11 +62,6 @@ def calculate(s):
         result = eval(s)
         print (result)
 
-    '''    
-	cases: 
-		multiplication and division adjacent to each other
-		any other charcater than 10 digits and 4 operations
-    '''
 	
     return
 
