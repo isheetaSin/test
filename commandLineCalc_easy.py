@@ -32,12 +32,18 @@ def calculate(s):
             check = 1
             break
     '''
-
+    valid = '0, 1, 2, 3, 4, 5, 6, 7, 8, 9, +, -, *, /, (, )'
+    
+    for i in range(len(s)):
+        if s[i] not in valid:
+		check = 1
+	
+    '''	
     for i in range(len(s)):
         if s[i].isdigit() == 0 and s[i]!='+'and s[i]!='-'and s[i]!='/'and s[i]!='*' and s[i]!='(' and s[i]!=')':
             check = 1
             break   
-
+    '''
     #check for adjacent multiplication and division
 
     curr_div = 0
